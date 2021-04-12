@@ -32,4 +32,20 @@ class UsuarioController
         }
         include "../views/usuario/mostrar.php";
     }
+
+    public function deseos()
+    {
+        $deseo = $_POST['nuevodeseo'];
+        $lista = $_POST['lista'];
+
+        if (!isset($lista)){
+            $lista = [];
+        }
+
+        if (isset($lista)){
+            $lista[] = $deseo;
+        }
+
+        include "../views/usuario/deseos.php";
+    }
 }  
